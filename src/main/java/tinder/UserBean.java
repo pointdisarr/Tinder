@@ -1,9 +1,18 @@
 package tinder;
 
 public class UserBean {
+    private int id;
     private String email;
     private String password;
     public boolean valid;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getEmail() {
         return email;
