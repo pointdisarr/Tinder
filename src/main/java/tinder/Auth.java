@@ -16,10 +16,14 @@ class Auth {
     private UserDao users = new UserDao();
     boolean check(String email, String password) throws SQLException {
         if (users.all()!=null){
-            List<UserBean> collect = users.all().stream().filter(userBean -> userBean.getEmail().equals(email) && userBean.getPassword().equals(password)).collect(Collectors.toList());
-         return collect.isEmpty();
+            List<UserBean> collect = users.all().stream()
+                    .filter(userBean -> userBean.getEmail().equals(email)
+                    && userBean.getPassword().equals(password))
+                    .collect(Collectors.toList());
+         return collect!=null;
 
         }
-        return true;
+        return false;
+
     }
     }
