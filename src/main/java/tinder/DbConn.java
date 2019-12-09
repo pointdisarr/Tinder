@@ -8,13 +8,17 @@ public class DbConn {
 
   private static Connection conn;
 
-  public static Connection get() throws SQLException {
+  public static Connection get(){
     if (conn == null) {
-      conn = DriverManager.getConnection(
-          "jdbc:postgresql://localhost:5432/postgres",
-          "postgres",
-          "123456"
-      );
+      try {
+        conn = DriverManager.getConnection(
+            "jdbc:postgresql://localhost:5432/postgres",
+            "postgres",
+            "123456"
+        );
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
     }
     return conn;
   }

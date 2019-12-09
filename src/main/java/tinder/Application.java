@@ -13,13 +13,14 @@ import org.eclipse.jetty.servlet.ServletHolder;
 public class Application {
   public static void main(String[] args) throws Exception {
     TemplateEngine te = TemplateEngine.resources("/templates");
+    Auth auth= new Auth();
     ServletContextHandler handler = new ServletContextHandler();
 
     handler.addServlet((new ServletHolder(new StaticContentServlet("content"))), "/static/*");
     handler.addServlet((new ServletHolder(new UsersServlet(te))), "/users/*");
     handler.addServlet((new ServletHolder(new LikedServlet(te))), "/liked/*");
     handler.addServlet((new ServletHolder(new MessagesServlet(te))), "/messages/*");
-    handler.addServlet((new ServletHolder(new LoginServlet(te))), "/login/*");
+    handler.addServlet((new ServletHolder(new LoginServlet(te, auth))), "/login/*");
     Server server = new Server(2001);
     server.setHandler(handler);
     server.start();

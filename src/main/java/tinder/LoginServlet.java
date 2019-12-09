@@ -1,23 +1,21 @@
 package tinder;
 
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.util.Arrays;
-import java.util.HashMap;
+import java.sql.SQLException;
 
 public class LoginServlet extends HttpServlet {
 
   private final TemplateEngine te;
+  private final Auth auth;
 
-  public LoginServlet(TemplateEngine te) {
+  public LoginServlet(TemplateEngine te, Auth auth) {
     this.te = te;
+    this.auth = auth;
   }
 
   @Override
@@ -28,6 +26,14 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+       String email=req.getParameter("inputEmail");
+       String password=req.getParameter("inputPassword");
+      try {
+        if (auth.check(email,password)){
+          resp.sendRedirect("/users/*");
+        }
+      } catch (SQLException e) {
+        e.printStackTrace();
+      }
     }
 }

@@ -6,6 +6,9 @@ public class UserBean {
     private String password;
     public boolean valid;
 
+    public UserBean(int id, String email, String password) {
+    }
+
     public int getId() {
         return id;
     }
