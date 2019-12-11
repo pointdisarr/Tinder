@@ -1,4 +1,7 @@
-package tinder;
+package app.controller;
+
+
+import app.TemplateEngine;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -6,16 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class RedirectServlet extends HttpServlet {
+public class UserController extends HttpServlet {
 
-  private final String redirectTo;
+  private final TemplateEngine te;
 
-  public RedirectServlet(String redirectTo) {
-    this.redirectTo = redirectTo;
+  public UserController(TemplateEngine te) {
+    this.te = te;
   }
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    resp.sendRedirect(redirectTo);
+    te.render("like-page.ftl", resp);
+
   }
 }

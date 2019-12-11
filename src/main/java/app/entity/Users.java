@@ -1,9 +1,14 @@
-package tinder;
+package app.entity;
 
-public class UserBean {
+public class Users {
+    public boolean valid;
+    private String userId;
     private String email;
     private String password;
-    public boolean valid;
+
+    public String getUserId() {
+        return userId;
+    }
 
     public String getEmail() {
         return email;

@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Custom styles for this template -->
+   l <!-- Custom styles for this template -->
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body style="background-color: #f5f5f5;">

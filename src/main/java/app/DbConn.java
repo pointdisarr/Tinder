@@ -1,4 +1,4 @@
-package tinder;
+package app;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,9 +11,9 @@ public class DbConn {
   public static Connection get() throws SQLException {
     if (conn == null) {
       conn = DriverManager.getConnection(
-          "jdbc:postgresql://localhost:5432/postgres",
-          "postgres",
-          "123456"
+          "jdbc:mysql://localhost:3306/",
+          "root",
+          ""
       );
     }
     return conn;
