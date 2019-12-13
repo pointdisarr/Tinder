@@ -10,6 +10,7 @@ import org.eclipse.jetty.servlet.ServletHolder;
  * http://localhost:2001/liked/
  * http://localhost:2001/login/
  * http://localhost:2001/messages/
+ * http://localhost:2001/register
  */
 public class Application {
     public static void main(String[] args) throws Exception {
@@ -21,6 +22,7 @@ public class Application {
         handler.addServlet((new ServletHolder(new LikedController(te))), "/liked/*");
         handler.addServlet((new ServletHolder(new MessagesController(te))), "/messages/*");
         handler.addServlet((new ServletHolder(new LoginController(te))), "/login/*");
+        handler.addServlet((new ServletHolder(new RegisterController(te))), "/register/*");
         Server server = new Server(2001);
         server.setHandler(handler);
         server.start();

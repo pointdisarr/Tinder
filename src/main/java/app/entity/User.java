@@ -1,10 +1,15 @@
 package app.entity;
 
-public class Users {
+public class User {
     public boolean valid;
     private String userId;
     private String email;
     private String password;
+
+    public User(String email, String pass) {
+        this.email = email;
+        this.password = pass;
+    }
 
     public String getUserId() {
         return userId;

@@ -1,30 +1,29 @@
 package app.DAO;
 
-import app.entity.Users;
+import app.entity.Profile;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class daoUsers implements DAO {
-    List<Users> usersList = new ArrayList<Users>();
-
+public class DAOProfile implements DAO {
+    List<Profile> profiles = new ArrayList<>();
     @Override
     public Object get(int id) {
-        return usersList.get(id);
+        return profiles.get(id);
     }
 
     @Override
     public List getAll() {
-        return usersList;
+        return profiles;
     }
 
     @Override
     public void put(Object o) {
-        usersList.add((Users) o);
+        profiles.add((Profile) o);
     }
 
     @Override
     public void delete(int id) {
-        usersList.remove(id);
+        profiles.remove(id);
     }
 }

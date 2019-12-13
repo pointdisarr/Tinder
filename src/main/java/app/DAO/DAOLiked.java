@@ -5,7 +5,7 @@ import app.entity.Liked;
 import java.util.ArrayList;
 import java.util.List;
 
-public class daoLiked implements DAO {
+public class DAOLiked implements DAO {
     List<Liked> likedList = new ArrayList<Liked>();
 
     @Override
