@@ -1,6 +1,6 @@
 package app.entity;
 
-public class Messages {
+public class Message {
     private String messageId;
     private String from;
     private String to;

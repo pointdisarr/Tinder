@@ -1,6 +1,6 @@
 package app.service;
 
-import app.DAO.DAOUsers;
+import app.DAO.DAOUser;
 import app.entity.User;
 
 import java.io.IOException;
@@ -8,20 +8,20 @@ import java.io.PrintWriter;
 import java.util.List;
 
 public class RegisterService {
-    DAOUsers daoUsers = new DAOUsers();
+    DAOUser daoUser = new DAOUser();
     PrintWriter writer;
-
-    public boolean check_register(String email, String pass ) throws IOException {
-        List<User> all = daoUsers.getAll();
+    public boolean check_register(String email, String pass) throws IOException {
+        List<User> all = daoUser.getAll();
         boolean found = false;
-        for (User u: all) {
+        for (User u : all) {
             if (u.getEmail().equals(email)) {
                 found = true;
                 break;
             }
         }
         if (!found) {
-            daoUsers.put(new User(email, pass));
+            User newUser = new User(email, pass);
+            daoUser.put(newUser);
             return true;
         }
         return false;

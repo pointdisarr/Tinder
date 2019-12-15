@@ -5,25 +5,25 @@ import app.entity.Profile;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOProfile implements DAO {
-    List<Profile> profiles = new ArrayList<>();
+public class DAOProfile implements DAO<Profile> {
+
     @Override
-    public Object get(int id) {
-        return profiles.get(id);
+    public Profile get(int id) {
+        throw new IllegalArgumentException("DAO<Profile>:get hasn't implemented");
     }
 
     @Override
-    public List getAll() {
-        return profiles;
+    public List<Profile> getAll() {
+        throw new IllegalArgumentException("DAO<Profile>:getall hasn't implemented");
     }
 
     @Override
-    public void put(Object o) {
-        profiles.add((Profile) o);
+    public void put(Profile profile) {
+        throw new IllegalArgumentException("DAO<Profile>:put hasn't implemented");
     }
 
     @Override
     public void delete(int id) {
-        profiles.remove(id);
+        throw new IllegalArgumentException("DAO<Profile>:delete hasn't implemented");
     }
 }

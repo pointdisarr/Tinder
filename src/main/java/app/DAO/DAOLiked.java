@@ -1,30 +1,32 @@
 package app.DAO;
 
 import app.entity.Liked;
+import app.entity.Message;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class DAOLiked implements DAO {
-    List<Liked> likedList = new ArrayList<Liked>();
+public class DAOLiked implements DAO<Liked> {
 
     @Override
-    public Object get(int id) {
-        return likedList.get(id);
+    public Liked get(int id) {
+        throw new IllegalArgumentException("DAO<Liked>:get hasn't implemented");
+
     }
 
     @Override
-    public List getAll() {
-        return likedList;
+    public List<Liked> getAll() {
+        throw new IllegalArgumentException("DAO<Liked>:getAll hasn't implemented");
     }
 
     @Override
-    public void put(Object o) {
-        likedList.add((Liked) o);
+    public void put(Liked liked) {
+        throw new IllegalArgumentException("DAO<Liked>:put hasn't implemented");
     }
 
     @Override
     public void delete(int id) {
-        likedList.remove(id);
+        throw new IllegalArgumentException("DAO<Liked>:delete hasn't implemented");
+
     }
 }

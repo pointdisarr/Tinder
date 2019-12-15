@@ -1,13 +1,26 @@
 package app.service;
 
-public class LoginService {
+import app.DAO.DAOUser;
+import app.entity.User;
 
-//    public Users signUp()
-//    public HttpServletResponse signIn(HttpServletRequest req){
-//          String email = req.getParameter("inputEmail");
-//          String pass = req.getParameter("inputPassword");
-//
-//
-//    }
+import java.io.PrintWriter;
+import java.util.List;
+
+public class LoginService {
+    DAOUser daoUser = new DAOUser();
+    PrintWriter writer;
+
+    public boolean checkLogin(String email, String pass) {
+        List<User> all = daoUser.getAll();
+        boolean found = false;
+        for (User u : all) {
+            if (u.getEmail().equals(email)
+                    && u.getPassword().equals(pass)) {
+                found = true;
+                break;
+            }
+        }
+        return found;
+    }
 
 }

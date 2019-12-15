@@ -1,6 +1,6 @@
 package app;
 
-import app.controller.*;
+import app.servlet.*;
 import org.eclipse.jetty.server.Server;
 import org.eclipse.jetty.servlet.ServletContextHandler;
 import org.eclipse.jetty.servlet.ServletHolder;
@@ -18,11 +18,11 @@ public class Application {
         ServletContextHandler handler = new ServletContextHandler();
 
         handler.addServlet((new ServletHolder(new StaticContentServlet("content"))), "/static/*");
-        handler.addServlet((new ServletHolder(new UserController(te))), "/users/*");
-        handler.addServlet((new ServletHolder(new LikedController(te))), "/liked/*");
-        handler.addServlet((new ServletHolder(new MessagesController(te))), "/messages/*");
-        handler.addServlet((new ServletHolder(new LoginController(te))), "/login/*");
-        handler.addServlet((new ServletHolder(new RegisterController(te))), "/register/*");
+        handler.addServlet((new ServletHolder(new UserServlet(te))), "/users/*");
+        handler.addServlet((new ServletHolder(new LikedServlet(te))), "/liked/*");
+        handler.addServlet((new ServletHolder(new MessageServlet(te))), "/messages/*");
+        handler.addServlet((new ServletHolder(new RegisterServlet(te))), "/register/*");
+        handler.addServlet((new ServletHolder(new LoginServlet(te))), "/login/*");
         Server server = new Server(2001);
         server.setHandler(handler);
         server.start();

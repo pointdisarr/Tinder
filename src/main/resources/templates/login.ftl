@@ -7,7 +7,7 @@
     <meta name="author" content="">
     <link rel="icon" href="img/favicon.ico">
 
-    <title>Sign in for Tinder</title>
+    <title>Sign in</title>
 
     <!-- Bootstrap core CSS -->
     <link href="/static/css/bootstrap.min.css" rel="stylesheet">
@@ -21,15 +21,10 @@
     <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
     <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
     <label for="inputEmail" class="sr-only">Email address</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
+    <input type="email" name="email" class="form-control" placeholder="Email address" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
-    <button class="btn btn-lg btn-primary btn-block" name="login" type="submit">Sign in</button>
-    <h1 class="h3 mb-2 text-secondary">Don't have an account?</h1>
-    <a class="h3 mb-2 text-secondary" href="/register"> SIGN UP </a>
+    <input type="password" name="password" class="form-control" placeholder="Password" required>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
     <p class="mt-5 mb-3 text-muted">&copy; Tinder 2019</p>
-
 </form>
-
 </body>
-</html>

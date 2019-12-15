@@ -1,4 +1,4 @@
-package app.controller;
+package app.servlet;
 
 
 import app.TemplateEngine;
@@ -9,16 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class MessagesController extends HttpServlet {
+
+public class LikedServlet extends HttpServlet {
 
   private final TemplateEngine te;
 
-  public MessagesController(TemplateEngine te) {
+  public LikedServlet(TemplateEngine te) {
     this.te = te;
   }
 
   @Override
   protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-    te.render("chat.ftl", resp);
+    te.render("people-list.ftl", resp);
   }
 }

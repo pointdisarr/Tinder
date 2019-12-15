@@ -1,4 +1,4 @@
-package app.controller;
+package app.servlet;
 
 
 import app.TemplateEngine;
@@ -9,11 +9,11 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class UserController extends HttpServlet {
+public class UserServlet extends HttpServlet {
 
   private final TemplateEngine te;
 
-  public UserController(TemplateEngine te) {
+  public UserServlet(TemplateEngine te) {
     this.te = te;
   }
 
